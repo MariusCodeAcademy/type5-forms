@@ -16,7 +16,7 @@ contactForm.addEventListener('submit', (event) => {
   );
   // sukti cikla per languagesList is atvaizduoti kieviena kalba htmle
 
-  console.log(languagesList);
+  console.log(languagesList); // node list
 
   // <p><strong>First name:</strong>James</p>
   const nameEl = makeOutputEl('First Name:', firstName);
@@ -26,10 +26,26 @@ contactForm.addEventListener('submit', (event) => {
   const emailAddressEL = makeOutputEl('Email address:', emailAddress);
   const skillsRangeEl = makeOutputEl('Skills level:', skillsRange);
   const groupEl = makeOutputEl('Group:', group);
-  const languagesEl = makeOutputEl(
-    'Preferred programing languages:',
-    languagesList
-  );
+
+  // const languagesEl = makeOutputEl(
+  //   'Preferred programing languages:',
+  //   languagesList
+  // );
+
+  // <h3>Preferred programing languages:</h3>
+  // <ul>
+  //   <li>PHP</li>
+  //   <li>Python</li>
+  // </ul>
+  const langItems = ['PHP', 'Python'];
+  const titleEl = document.createElement('h3');
+  titleEl.textContent = 'Preferred programing languages:';
+  const listEl = document.createElement('ul');
+
+  // sukti cikla per langItems ir sukurti ir prideti li el i sarasa
+  let listItemEl = document.createElement('li');
+  listItemEl.textContent = 'PHP';
+  listEl.append(listItemEl);
 
   const formDisplayEl = document.querySelector('#form-display');
   formDisplayEl.innerHTML = '';
@@ -41,7 +57,8 @@ contactForm.addEventListener('submit', (event) => {
     emailAddressEL,
     skillsRangeEl,
     groupEl,
-    languagesEl
+    titleEl,
+    listEl
   );
 });
 
