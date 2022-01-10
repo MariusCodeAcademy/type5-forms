@@ -16,7 +16,7 @@ contactForm.addEventListener('submit', (event) => {
   );
   // sukti cikla per languagesList is atvaizduoti kieviena kalba htmle
 
-  console.log(languagesList); // node list
+  console.log(languagesList[0].value); // node list
 
   // <p><strong>First name:</strong>James</p>
   const nameEl = makeOutputEl('First Name:', firstName);
@@ -32,20 +32,25 @@ contactForm.addEventListener('submit', (event) => {
   //   languagesList
   // );
 
+  //<article>
   // <h3>Preferred programing languages:</h3>
   // <ul>
   //   <li>PHP</li>
   //   <li>Python</li>
   // </ul>
-  const langItems = ['PHP', 'Python'];
+  // </article>
   const titleEl = document.createElement('h3');
   titleEl.textContent = 'Preferred programing languages:';
   const listEl = document.createElement('ul');
 
   // sukti cikla per langItems ir sukurti ir prideti li el i sarasa
-  let listItemEl = document.createElement('li');
-  listItemEl.textContent = 'PHP';
-  listEl.append(listItemEl);
+  languagesList.forEach((langItemNode) => {
+    let listItemEl = document.createElement('li');
+    listItemEl.textContent = langItemNode.value;
+    listEl.append(listItemEl);
+  });
+
+  makeOutputList('Preferred programing languages:', languagesList);
 
   const formDisplayEl = document.querySelector('#form-display');
   formDisplayEl.innerHTML = '';
@@ -70,6 +75,8 @@ function makeOutputEl(title, value) {
   newP.append(nameTitleEl, value);
   return newP;
 }
+
+function makeOutputList(title, nodeList) {}
 
 // const chekedInputs = document.querySelectorAll(
 //   "input[name='languages']:checked"
