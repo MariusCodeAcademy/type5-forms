@@ -7,3 +7,7 @@
 5. Dominančias programavimo kalbas atvaizduoti „student-item" elemente.
 6. Sukūrus studentą, turi iššokti <span> elementas, kuris informuoja apie studento sukūrimą: „Sukurtas studentas (Vardas Pavardė)". Šis span elementas dingsta po 5 sekundžių.
 7. Range reikšmės atvaizdavimas naujame elemente.
+
+6.1 sukurti span
+6.2 i span el irasyti „Sukurtas studentas (Vardas Pavardė)"
+6.3 praejus 5 sek sunaikitni arba paslepti span

@@ -1,8 +1,16 @@
 const contactForm = document.querySelector('#first-form');
+const formDisplayEl = document.querySelector('#form-display');
+const body = document.body;
+
+// 1. create div#students-list
+const studentListOutputEl = document.createElement('div');
+studentListOutputEl.setAttribute('id', 'students-list');
+body.append(studentListOutputEl);
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
+  //  1 get all values ======================================
   const firstName = event.target.elements.firstName.value;
   const lastName = event.target.elements.lastName.value;
   const age = event.target.elements.age.value;
@@ -16,7 +24,7 @@ contactForm.addEventListener('submit', (event) => {
   );
   // sukti cikla per languagesList is atvaizduoti kieviena kalba htmle
 
-  console.log(languagesList[0].value); // node list
+  // 2. input output elements ======================================
 
   // <p><strong>First name:</strong>James</p>
   const nameEl = makeOutputEl('First Name:', firstName);
@@ -27,18 +35,13 @@ contactForm.addEventListener('submit', (event) => {
   const skillsRangeEl = makeOutputEl('Skills level:', skillsRange);
   const groupEl = makeOutputEl('Group:', group);
 
-  // const languagesEl = makeOutputEl(
-  //   'Preferred programing languages:',
-  //   languagesList
-  // );
-
-  //<article>
-  // <h3>Preferred programing languages:</h3>
-  // <ul>
-  //   <li>PHP</li>
-  //   <li>Python</li>
-  // </ul>
-  // </article>
+  // <article>
+  //   <h3>Preferred programing languages:</h3>
+  //   <ul>
+  //     <li>PHP</li>
+  //     <li>Python</li>
+  //   </ul>
+  //  </article>
   const titleEl = document.createElement('h3');
   titleEl.textContent = 'Preferred programing languages:';
   const listEl = document.createElement('ul');
@@ -52,9 +55,16 @@ contactForm.addEventListener('submit', (event) => {
 
   makeOutputList('Preferred programing languages:', languagesList);
 
-  const formDisplayEl = document.querySelector('#form-display');
-  formDisplayEl.innerHTML = '';
-  formDisplayEl.append(
+  // 1. create div#students-list
+
+  // 2. create div.student-item
+  const studentItemEl = document.createElement('div');
+  // older way
+  // studentItemEl.setAttribute('class', 'student-item');
+  // better way
+  studentItemEl.classList.add('student-item');
+  // 3. add student info to student-item
+  studentItemEl.append(
     nameEl,
     lastNameEl,
     ageEl,
@@ -65,6 +75,24 @@ contactForm.addEventListener('submit', (event) => {
     titleEl,
     listEl
   );
+  // 4. add student to div#students-list
+
+  // 3. Display output values ======================================
+  studentListOutputEl.append(studentItemEl);
+
+  //   6.1 sukurti span
+  //   6.2 i span el irasyti „Sukurtas studentas (Vardas Pavardė)"
+  //   6.3 ideti span i dokumenta
+  //   6.4 praejus 5 sek sunaikitni arba paslepti span
+
+  // makefeedback()
+  const feedbackSpan = document.createElement('span');
+  feedbackSpan.textContent = 'Sukurta';
+  contactForm.append(feedbackSpan);
+  // setTimeout(<funkcija kuri bus vygdoma>, <po kiek laiko miliisekundem>)
+  setTimeout(() => {
+    feedbackSpan.textContent = '';
+  }, 3000);
 });
 
 // Helper functions
@@ -82,3 +110,11 @@ function makeOutputList(title, nodeList) {}
 //   "input[name='languages']:checked"
 // );
 // console.log('chekedInputs ===', chekedInputs);
+
+{
+  /* <div id="students-list">
+    <div class="student-item">
+      << studen info >>
+    </div>
+  </div> */
+}
