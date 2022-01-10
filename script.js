@@ -58,3 +58,8 @@ function makeOutputEl(title, value) {
   newP.append(nameTitleEl, value);
   return newP;
 }
+
+const chekedInputs = document.querySelectorAll(
+  "input[name='languages']:checked"
+);
+console.log('chekedInputs ===', chekedInputs);
