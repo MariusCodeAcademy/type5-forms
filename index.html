@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form id="first-form" action="">
+    <label for="f-name">First Name:</label>
+    <input type="text" id="f-name" name="firstName" placeholder="Enter Your First Name">
+    <label for="l-name">Last Name:</label>
+    <input type="text" id="l-name" name="lastName" placeholder="Enter Your Last Name">
+    <label for="f-age">Your age:</label>
+    <input type="number" id="f-age" name="age" placeholder="Enter Your age">
+    <label for="p-number">Phone Number:</label>
+    <input type="tel" id="p-number" name="phoneNumber" placeholder="Enter Your Phone Number">
+    <label for="f-email">Email Address:</label>
+    <input type="email" id="f-email" name="emailAddress" placeholder="Enter Your email Address">
+    <label for="f-skills">Your skills level:</label>
+    <input type="range" id="f-skills" min="1" max="10" name="skillsRange" oninput="num.value=this.value" value="5">
+    <output id="num">0</output>
+
+
+    <fieldset id="checkbox">
+      <legend>Preferred programing languages:</legend>
+      <input type="checkbox" id="python" name="languages" value="python" checked>
+      <label for="python">Python</label>
+
+      <input type="checkbox" id="php" name="languages" value="php">
+      <label for="php">PHP</label>
+
+      <input type="checkbox" id="javascript" name="languages" value="javascript">
+      <label for="javascript">Javascript</label>
+
+      <input type="checkbox" id="java" name="languages" value="java">
+      <label for="java">Java</label>
+      <input type="checkbox" id="kotlin" name="languages" value="kotlin">
+      <label for="kotlin">Kotlin</label>
+    </fieldset>
+
+    <fieldset id="radio-but">
+      <legend>Your Group:</legend>
+      <input type="radio" id="type-1" name="group" value="type 1">
+      <label for="type-1">Type 1</label>
+      <input type="radio" id="type-2" name="group" value="type 2">
+      <label for="type-2">Type 2</label>
+      <input type="radio" id="type-3" name="group" value="type 3">
+      <label for="type-3">Type 3</label>
+      <input type="radio" id="type-4" name="group" value="type 4">
+      <label for="type-4">Type 4</label>
+      <input type="radio" id="type-5" name="group" value="type 5">
+      <label for="type-5">Type 1</label>
+    </fieldset>
+    <input type="submit" value='Submit' id="submit">
+  </form>
+  <p id="form-display"></p>
+  <div id="students-list"></div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

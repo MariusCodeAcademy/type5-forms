@@ -1,0 +1,20 @@
+body {
+  margin-bottom: 100px;
+}
+
+#first-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#first-form input[type='text'],
+#first-form input[type='number'],
+#first-form input[type='tel'],
+#first-form input[type='email'] {
+  padding: 0.3em 0.8em;
+  margin-bottom: 0.5em;
+}
+
+#first-form input[type='submit'] {
+  margin-top: 1rem;
+}
