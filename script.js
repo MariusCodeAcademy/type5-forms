@@ -21,20 +21,28 @@ contactForm.addEventListener('submit', (event) => {
 
   const nameEl = makeOutputEl('First Name:', firstName);
   const lastNameEl = makeOutputEl('Last Name', lastName);
+  const ageEl = makeOutputEl('Age', age);
+  const phoneNumberEl = makeOutputEl('Phone Number:', phoneNumber);
+  const emailAddressEL = makeOutputEl('Email address:', emailAddress);
+  const skillsRangeEl = makeOutputEl('Skills level:', skillsRange);
+  const groupEl = makeOutputEl('Group:', group);
+  const languagesEl = makeOutputEl(
+    'Preferred programing languages:',
+    languages
+  );
 
-  document.body.append(nameEl, lastNameEl);
+  const formDisplayEl = document.querySelector('#form-display');
 
-  const contactInfo = `
-  <strong>First Name:</strong> ${firstName}, <br/>
-  <strong>Last Name:</strong> ${lastName}, <br/>
-  <strong>Age:</strong> ${age}, <br/>
-  <strong>Phone Number:</strong> ${phoneNumber}, <br/>
-  <strong>email address:</strong> ${emailAddress}, <br/>
-  <strong>Skills level:</strong> ${skillsRange}, <br/>
-  <strong>Group:</strong> ${group}, <br/>
-  <strong>Preferred programing languages:</strong> ${languages} <br/>
-  `;
-  document.querySelector('#form-display').innerHTML = contactInfo;
+  formDisplayEl.append(
+    nameEl,
+    lastNameEl,
+    ageEl,
+    phoneNumberEl,
+    emailAddressEL,
+    skillsRangeEl,
+    groupEl,
+    languagesEl
+  );
 
   const body = document.body;
   let students_list_div;
